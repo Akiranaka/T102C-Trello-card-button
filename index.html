@@ -43,7 +43,11 @@
             },
             action: {
               text: 'My Action',
-              callback: (t) => t.popup(...),
+              callback: async function (t) {
+                console.log('button clicked');
+                const card = await t.card('id', 'name');
+                console.log(card);
+              }
             }
           };
         }
